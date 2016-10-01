@@ -23,3 +23,11 @@ module.exports =
       * test: /\.styl$/ loader: \style!css!stylus
       * test: /\.css$/ loader: \style!css
       * test: /\.png$/ loader: \file
+      * test: /\.json$/ loader: \json-loader
+
+  node:
+    console: true
+    fs: 'empty'
+    tls: 'emtpy'
+    net: 'empty'
+
