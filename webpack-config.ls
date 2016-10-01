@@ -28,6 +28,6 @@ module.exports =
   node:
     console: true
     fs: 'empty'
-    tls: 'emtpy'
+    tls: 'empty'
     net: 'empty'
 

@@ -1,6 +1,6 @@
 react = require 'react'
 GoogleMap = react.createFactory (require 'google-map-react').default
-request = require 'request'
+request = (require 'request').default
 
 class SimpleMapPage extends react.Component
   
