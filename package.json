@@ -1,0 +1,37 @@
+{
+  "name": "msg-in-a-bottle-web",
+  "version": "1.0.0",
+  "description": "Location-based social media",
+  "main": "index.js",
+  "dependencies": {
+    "css-loader": "^0.23.1",
+    "express": "^4.14.0",
+    "google-map-react": "^0.20.0",
+    "google-maps-react": "^1.0.18",
+    "livescript-loader": "^0.1.5",
+    "pug": "^0.1.0",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "react-router": "^2.6.1",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.1.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "lsc index.ls",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSGInABottle/web.git"
+  },
+  "author": "Andy Tu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MSGInABottle/web/issues"
+  },
+  "homepage": "https://github.com/MSGInABottle/web#readme"
+}
