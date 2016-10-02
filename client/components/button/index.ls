@@ -37,6 +37,6 @@ Button = React.create-class do
 
   	render: ->
     	<input type="text" id="txt"/>
-    	<button type="button">Send</button>
+    	<button type="button" onClick="buttonClicked">Send</button>
 
 module.exports = Button 
