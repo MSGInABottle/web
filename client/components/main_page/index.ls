@@ -10,8 +10,6 @@ class MainPage extends react.Component
     div className: 'c-simple-map-page',
       SimpleMapPage {}
       DropMessage {}
-    # Container {}, 'container'
-    # div {} , 'hi'
 
 
 module.exports = MainPage
