@@ -20,7 +20,7 @@ Button = React.create-class do
     	options =
     		method: 'POST',
       		url: 'http://52.41.253.190:9000/send/',
-      		qs: '{"text":txt.value, "latitude":@loc.lat, "longitude": @loc.long}'
+      		qs: "{\"text\":#{txt.value}, \"latitude\":#{@loc.lat}, \"longitude\": #{@loc.long}}"
       		headers: 
       			"Content-Type": "application/json"
     
