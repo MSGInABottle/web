@@ -8,9 +8,10 @@
   margin-left: -250px
   background: transparent
 
-  input
-    font-size: 24px
-    background: #ccc
+  textarea
+    font-size: 16px
+    color: #fff
+    background: #333
     width: 380px
     border: none
     box-sizing: border-box
@@ -18,9 +19,15 @@
     padding: 20px 20px
     display: inline-block
     vertical-align: middle
-    opacity: 0.5
+    opacity: 0.61
     outline: none
-  
+    resize: none
+    font-weight: 200
+    font-family: Helvetica
+    
+  ::-webkit-input-placeholder
+      color: #fff
+          
   button
     display: inline-block
     vertical-align: middle
@@ -31,7 +38,7 @@
     background-size: cover
     outline: none
     background-color: #ddd
-    opacity: 0.5
+    opacity: 0.7
     
     &:hover
       cursor: pointer

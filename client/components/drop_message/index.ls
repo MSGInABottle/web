@@ -1,6 +1,6 @@
 require './index.styl'
 react = require 'react'
-{button, div, input} = react.DOM
+{button, div, input, textarea} = react.DOM
 request = require 'request'
 
 
@@ -41,7 +41,7 @@ class DropMessage extends react.Component
 
   render: ->
     div className: 'c-drop-message',
-      input ref: 'dropMsg', type: 'text'
+      textarea ref: 'dropMsg', type: 'text', rows: 4, placeholder: 'Write a message for someone else to find.'
       button onClick: @sendPost
 
 

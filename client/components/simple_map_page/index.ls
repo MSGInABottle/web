@@ -10,7 +10,6 @@ InfoWindow = react.createFactory (require 'react-google-maps').InfoWindow
 class SimpleMapPage extends react.Component
   
   ~>
-    @getMessages!
     @getLocation!
     @state = 
       messages: []
@@ -22,8 +21,8 @@ class SimpleMapPage extends react.Component
   getMessages: ->
     console.log 'Getting messages...'
     options =
-      url: 'http://52.41.253.190:9000/messages/?latitude=43.474389&longitude=-80.531860'
-      # url: 'http://127.0.0.1:9000/messages/?latitude=43.474389&longitude=-80.531860'    
+      url: "http://52.41.253.190:9000/messages/?latitude=#{@loc.lat}&longitude=#{@loc.lng}"
+      # url: "http://127.0.0.1:9000/messages/?latitude=#{@loc.lat}&longitude=#{@loc.lng}"
     request options, (error, response, body) ~>
       if !error and response.statusCode is 200
         @setState messages: JSON.parse body
@@ -35,6 +34,7 @@ class SimpleMapPage extends react.Component
       navigator.geolocation.getCurrentPosition (position) ~>
         @loc = lat: position.coords.latitude, lng: position.coords.longitude
         console.log "Current location is Lat: #{@loc.lat}, Lng: #{@loc.lng}"
+        @getMessages!
 
 
   # TODO: toggle visibility of message onclick
@@ -65,6 +65,7 @@ class SimpleMapPage extends react.Component
             key: i
             position: lng: msg.Longitude, lat: msg.Latitude
             title: msg.Text
+            icon: require './message_in_a_bottle.png'
           }, 
             InfoWindow {},
               div {}, msg.Text
