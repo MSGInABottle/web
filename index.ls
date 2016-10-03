@@ -4,7 +4,7 @@ webpackDevMiddleware = require 'webpack-dev-middleware'
 
 
 app = express!
-app.listen 8000
+app.listen process.env.PORT || 8000
 
 app.use webpackDevMiddleware webpack require './webpack-config.ls'
 # app.use (req, res, next) ->

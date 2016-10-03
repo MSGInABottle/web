@@ -11,22 +11,30 @@ class SimpleMapPage extends react.Component
   
   ~>
     @getMessages!
+    @getLocation!
     @state = 
       messages: []
       defaultCenter:
         lat: 43.474389
         lng: -80.531860
 
+
   getMessages: ->
     console.log 'Getting messages...'
     options =
       url: 'http://52.41.253.190:9000/messages/?latitude=43.474389&longitude=-80.531860'
-      # url: 'http://127.0.0.1:9000/messages/?latitude=43.474389&longitude=-80.531860'
-    
+      # url: 'http://127.0.0.1:9000/messages/?latitude=43.474389&longitude=-80.531860'    
     request options, (error, response, body) ~>
       if !error and response.statusCode is 200
         @setState messages: JSON.parse body
         setTimeout (~> @getMessages!), 1000
+
+
+  getLocation: ~>
+    if navigator.geolocation
+      navigator.geolocation.getCurrentPosition (position) ~>
+        @loc = lat: position.coords.latitude, lng: position.coords.longitude
+        console.log "Current location is Lat: #{@loc.lat}, Lng: #{@loc.lng}"
 
 
   # TODO: toggle visibility of message onclick
@@ -60,6 +68,11 @@ class SimpleMapPage extends react.Component
           }, 
             InfoWindow {},
               div {}, msg.Text
+        Marker {
+          position: @loc
+          icon: require '../../images/user_location_marker.png'
+          zIndex: 100
+        }
     }
   
     
